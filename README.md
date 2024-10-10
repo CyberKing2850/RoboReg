@@ -1,12 +1,5 @@
 # RoboReg
 
+The pruning technique applied in this neural network approach involves removing weights in a ResNet20 model, trained on the CIFAR-10 dataset. The cifar_training notebook is used to train the ResNet20 on the dataset, while the cifar_pruning notebook is utilized to prune the trained network.
 
-Pruning (weight removal) work for neural networks
-cifar_training notebook for training resnet20 on the cifar10 dataset
-cifar_pruning notebook for pruning the resulting neural network.
-
-The idea behind this pruning method:
-it looks at the basic building block of resnet (conv1->bn1->conv2->bn2).
-For the first layer, the filters are clustered and only the cluster centers are kept.
-According to the number of clusters, the weights and biases of bn1 and conv2 are adjusted.
-As a result of these changes, the input and output dimensions of the block remain the same, but the number of filters inside the block is reduced, which decreases the number of parameters and consequently the number of flops, speeding up the model inference.
+The concept behind this pruning method focuses on the core structure of ResNet, consisting of a sequence: conv1 -> bn1 -> conv2 -> bn2. In the first convolutional layer, the filters are grouped into clusters, and only the cluster centers are retained. Based on the number of clusters, the weights and biases of the subsequent bn1 and conv2 layers are adjusted. This process keeps the input and output dimensions of the block unchanged, but reduces the number of filters inside it. As a result, the number of parameters is decreased, leading to a reduction in floating-point operations (FLOPs), which accelerates model inference..
