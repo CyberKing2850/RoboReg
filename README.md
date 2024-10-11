@@ -1,7 +1,7 @@
 # RoboReg
 
 
-#CIFAR-10 Pruning with ResNet-20
+CIFAR-10 Pruning with ResNet-20
 
 Summary:
 
